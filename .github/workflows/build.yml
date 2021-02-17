@@ -7,6 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - run: ./build.sh
+      - run: shasum -a 256 Sparkle-2.0.0.tar.xz
       - uses: actions/upload-artifact@v2
         with:
           name: sparkle
