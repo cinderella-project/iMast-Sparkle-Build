@@ -1,0 +1,16 @@
+diff --git a/Makefile b/Makefile.new
+index 6c35fa7..39d4cc3 100644
+--- a/Makefile
++++ b/Makefile
+@@ -15,10 +15,7 @@ localizable-strings:
+ release:
+ 	xcodebuild -scheme Distribution -configuration Release -derivedDataPath "$(BUILDDIR)" build
+ 	./Configurations/release-move-tag.sh
+-	open "$(BUILDDIR)/Build/Products/Release/"
+-	cat Sparkle.podspec
+-	@echo "Don't forget to update CocoaPods! pod trunk push"
+-	@echo "Don't forget to upload Sparkle-for-Swift-Package-Manager.zip!"
++	cp "$(BUILDDIR)/Build/Products/Release/Sparkle-2.0.0.tar.xz" ../
+ 
+ build:
+ 	xcodebuild clean build

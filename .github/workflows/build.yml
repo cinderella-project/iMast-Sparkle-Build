@@ -1,0 +1,13 @@
+on:
+  - push
+
+jobs:
+  build:
+    runs-on: [macOS-latest]
+    steps:
+      - uses: actions/checkout@master
+      - run: ./build.sh
+      - uses: actions/upload-artifact@v2
+        with:
+          name: sparkle
+          path: Sparkle-2.0.0.tar.xz
